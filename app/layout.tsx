@@ -15,7 +15,7 @@ const unbounded = Unbounded({
 });
 
 export const metadata: Metadata = {
-  title: "Talking Orb Demo",
+  title: "AI Consortanist Demo",
   description: "A topic-locked, voice-enabled webinar demo.",
 };
 

@@ -1,4 +1,4 @@
-# Talking Orb Webinar Demo
+# AI Consortanist Webinar Demo
 
 A Vercel-ready Next.js demo that answers questions only about your webinar topic. It supports typed chat, browser voice input (Chrome/Edge), and speech synthesis for spoken replies. The UI centers a glowing animated orb with clear states (idle, listening, thinking, speaking, error).
 
@@ -62,4 +62,3 @@ For production traffic, replace the in-memory rate limiter with a durable store 
 ## Security Notes
 - Never expose API keys in client code.
 - Always use `.env.local` for local secrets and Vercel env vars for deploys.
-

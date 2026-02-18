@@ -19,6 +19,10 @@ type ApiResponse = {
 type OrbState = "idle" | "listening" | "thinking" | "speaking" | "error";
 
 const MAX_INPUT_CHARS = 1200;
+const MIN_REPLY_DELAY_MS = 800;
+const MAX_REPLY_DELAY_MS = 1400;
+
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export default function Chat() {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -184,6 +188,10 @@ export default function Chat() {
       }
 
       const assistantText = payload.assistantText || "(No response)";
+      const delayMs =
+        Math.floor(Math.random() * (MAX_REPLY_DELAY_MS - MIN_REPLY_DELAY_MS + 1)) +
+        MIN_REPLY_DELAY_MS;
+      await sleep(delayMs);
       setMessages((prev) => [...prev, { role: "assistant", content: assistantText }]);
       setSuggestions(payload.suggestions || []);
 
@@ -245,7 +253,7 @@ export default function Chat() {
   return (
     <div className="app-shell">
       <div className="hero">
-        <h1>Talking Orb</h1>
+        <h1>AI Consortanist</h1>
         <p>Ask anything about the webinar topic. The orb listens, answers, and speaks back.</p>
       </div>
 
