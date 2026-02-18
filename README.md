@@ -1,6 +1,25 @@
 # AI Consortanist Webinar Demo
 
-A Vercel-ready Next.js demo that answers questions only about your webinar topic. It supports typed chat, browser voice input (Chrome/Edge), and speech synthesis for spoken replies. The UI centers a glowing animated orb with clear states (idle, listening, thinking, speaking, error).
+This is a Next.js AI Orb that supports typed chat, browser voice input (Chrome/Edge), and speech synthesis for spoken replies. The UI centers a glowing animated orb with clear states (idle, listening, thinking, speaking, error).
+
+## Default Topic Guardrails
+
+The current configuration is built to answer questions around a specific topic using the `WEBINAR_TOPIC` environment variable and strict topic guardrails.
+
+To broaden the assistant beyond a single topic, you can:
+- Set `STRICT_TOPIC_MODE=false` to disable topic gating.
+- Update the system prompt in `lib/guardrails.ts` to allow multiple topics or a broader scope.
+- Replace the topic classifier in `lib/guardrails.ts` with a custom policy (for example category allowlists).
+- Expand the UI guidance text in `components/Chat.tsx` to reflect your new scope.
+- Rename `WEBINAR_TOPIC` to something more general (and update references) if desired.
+
+## Common Uses for AI Orbs
+
+1. Webinar or event Q&A assistant
+2. Product demo concierge for prospects
+3. Internal enablement or onboarding guide
+4. Customer support triage or FAQ helper
+5. Interactive brand experience or marketing microsite
 
 ## Quick Start
 
