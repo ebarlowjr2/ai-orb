@@ -1,4 +1,4 @@
-# AI Consortanist Webinar Demo
+# AI Consortanist
 
 This is a Next.js AI Orb that supports typed chat, browser voice input (Chrome/Edge), and speech synthesis for spoken replies. The UI centers a glowing animated orb with clear states (idle, listening, thinking, speaking, error).
 
