@@ -30,6 +30,23 @@ npm run dev
 
 Open http://localhost:3000
 
+## Environment Variables (Required and Optional)
+
+Required:
+- `LLM_API_KEY` - Your OpenAI API key (server-side only, never in the browser)
+- `WEBINAR_TOPIC` - The topic you want the assistant to enforce
+
+Recommended:
+- `LLM_MODEL` - `gpt-4o-mini`
+
+Optional:
+- `STRICT_TOPIC_MODE` - `true` or `false` (default `true`)
+- `MAX_TURNS_PER_SESSION` - Default `20`
+- `MAX_INPUT_CHARS` - Default `1200`
+- `MAX_OUTPUT_CHARS` - Default `1200`
+- `RATE_LIMIT_PER_MIN` - Default `10`
+- `DEMO_ACCESS_CODE` - Reserved (not used yet)
+
 ## Voice Requirements
 - Speech-to-text uses the Web Speech API and works best in Chrome/Edge.
 - Text-to-speech uses `speechSynthesis` and works in major modern browsers.
@@ -42,6 +59,15 @@ If speech recognition is not available, the UI falls back to typing only.
 2. Import into Vercel
 3. Set the same environment variables in Vercel project settings
 4. Deploy
+
+## Change the Name
+
+Update these files:
+- `components/Chat.tsx` (headline in the hero area)
+- `app/layout.tsx` (browser tab title)
+- `README.md` (project name and description)
+
+Search for `AI Consortanist` and replace it with your preferred name.
 
 ## Guardrails and Safety
 - The assistant only answers questions related to `WEBINAR_TOPIC`.
