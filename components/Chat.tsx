@@ -164,7 +164,7 @@ export default function Chat() {
     setHasError(false);
     setSuggestions([]);
 
-    const nextMessages = [...messages, { role: "user", content: text }];
+    const nextMessages: Message[] = [...messages, { role: "user", content: text }];
     setMessages(nextMessages);
     setThinking(true);
 
